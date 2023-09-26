@@ -34,6 +34,11 @@ public class AutorController {
         return new ResponseEntity<>(autorService.buscarAutorPorId(id), HttpStatus.OK);
     }
 
+    @PostMapping("/buscar")
+    public ResponseEntity<List<Autor>> buscarAutorPorNombre(@RequestBody Autor autor) {
+        return new ResponseEntity<>(autorService.buscarAutorPorNombre(autor.getNombre()), HttpStatus.OK);
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<Autor> actualizarAutorPorId(@PathVariable Long id, @RequestBody Autor autor){
         return new ResponseEntity<>(autorService.actualizarAutorPorId(id, autor), HttpStatus.OK);

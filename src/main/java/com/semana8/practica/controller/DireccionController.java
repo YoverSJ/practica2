@@ -34,6 +34,11 @@ public class DireccionController {
         return new ResponseEntity<>(direccionService.buscarDireccionPorId(id), HttpStatus.OK);
     }
 
+    @PostMapping("/buscar")
+    public ResponseEntity<List<Direccion>> buscarDireccionPorCalle(@RequestBody Direccion direccion) {
+        return new ResponseEntity<>(direccionService.buscarDireccionPorCalle(direccion.getCalle()), HttpStatus.OK);
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<Direccion> actualizarDireccionPorId(@PathVariable Long id, @RequestBody Direccion direccion){
         return new ResponseEntity<>(direccionService.actualizarDireccionPorId(id, direccion), HttpStatus.OK);

@@ -1,7 +1,6 @@
 package com.semana8.practica.service;
 
 import com.semana8.practica.model.Autor;
-import com.semana8.practica.model.Direccion;
 import com.semana8.practica.repository.AutorRepository;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +27,16 @@ public class AutorService {
             return autor.get();
         }else{
             throw new RuntimeException("No existe la Autor");
+        }
+    }
+
+    public List<Autor> buscarAutorPorNombre(String nombre){
+        List<Autor> autores = autorRepository.findByNombreContaining(nombre);
+
+        if (!autores.isEmpty()){
+            return autores;
+        }else{
+            throw new RuntimeException("No existen Personas con el nombre " + nombre);
         }
     }
 

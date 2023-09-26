@@ -31,7 +31,7 @@ public class PersonaService {
     }
 
     public List<Persona> buscarPersonaPorNombre(String nombre){
-        List<Persona> personas = personaRepository.findByNombre(nombre);
+        List<Persona> personas = personaRepository.findByNombreContaining(nombre);
 
         if (!personas.isEmpty()){
             return personas;

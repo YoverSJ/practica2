@@ -1,6 +1,5 @@
 package com.semana8.practica.service;
 
-import com.semana8.practica.model.Autor;
 import com.semana8.practica.model.Libro;
 import com.semana8.practica.repository.LibroRepository;
 import org.springframework.stereotype.Service;
@@ -28,6 +27,16 @@ public class LibroService {
             return libro.get();
         }else{
             throw new RuntimeException("No existe la Libro");
+        }
+    }
+
+    public List<Libro> buscarLibroPorNombre(String titulo){
+        List<Libro> libros = libroRepository.findByTituloContaining(titulo);
+
+        if (!libros.isEmpty()){
+            return libros;
+        }else{
+            throw new RuntimeException("No existen Personas con el nombre " + titulo);
         }
     }
 

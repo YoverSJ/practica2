@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface PersonaRepository extends JpaRepository<Persona, Long> {
 
-    public List<Persona> findByNombre(String nombre);
+    public List<Persona> findByNombreContaining(String nombre);
 
 }

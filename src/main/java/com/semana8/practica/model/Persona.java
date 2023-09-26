@@ -24,4 +24,12 @@ public class Persona {
     @OneToMany(mappedBy = "persona")
     @JsonIgnore
     private List<Direccion> direcciones = new ArrayList<>();
+
+    public Persona() {
+    }
+
+    public Persona(Long id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
 }

@@ -1,7 +1,6 @@
 package com.semana8.practica.service;
 
 import com.semana8.practica.model.Direccion;
-import com.semana8.practica.model.Persona;
 import com.semana8.practica.repository.DireccionRepository;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +27,16 @@ public class DireccionService {
             return direccion.get();
         }else{
             throw new RuntimeException("No existe la Direccion");
+        }
+    }
+
+    public List<Direccion> buscarDireccionPorCalle(String calle){
+        List<Direccion> direcciones = direccionRepository.findByCalleContaining(calle);
+
+        if (!direcciones.isEmpty()){
+            return direcciones;
+        }else{
+            throw new RuntimeException("No existen Personas con el nombre " + calle);
         }
     }
 

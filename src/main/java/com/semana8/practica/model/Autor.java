@@ -23,4 +23,12 @@ public class Autor {
     @ManyToMany(mappedBy = "autores")
     @JsonIgnore
     private List<Libro> libros = new ArrayList<>();
+
+    public Autor() {
+    }
+
+    public Autor(Long id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
 }

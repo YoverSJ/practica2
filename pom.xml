@@ -100,7 +100,12 @@
 				</executions>
 				<configuration>
 					<excludes>
-						<exclude></exclude>
+						<exclude>com/semana8/practica/controller/**</exclude>
+						<exclude>com/semana8/practica/model/**</exclude>
+						<exclude>com/semana8/practica/repository/**</exclude>
+						<exclude>com/semana8/practica/service/DireccionService.class</exclude>
+						<exclude>com/semana8/practica/service/LibroService.class</exclude>
+						<exclude>com/semana8/practica/PracticaApplication.class</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
